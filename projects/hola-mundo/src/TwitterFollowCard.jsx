@@ -1,16 +1,21 @@
-export function TwitterFollowCard ({userName, name, isFollowing}) {
+export function TwitterFollowCard ({formatUserName, userName, name, isFollowing}) {
+    
+    
     return (
-        <article>
-            <header>
-                <img alt="El avatar de midudev" src="https://unavatar.io/midudev" />
-                <div>
+        <article className="tw-followCard">
+            <header className="tw-followCard-header">
+                <img 
+                className="tw-followCard-avatar"
+                alt="El avatar de midudev" 
+                src={`https://unavatar.io/${userName}`} />
+                <div className="tw-followCard-info">
                     <strong>{name}</strong>
-                    <span>@{userName}</span>
+                    <span className="tw-followCard-infoUserName">{formatUserName(userName)}</span>
                 </div>
             </header>
 
             <aside>
-                <button>
+                <button className="tw-followCard-button">
                     Seguir
                 </button>
             </aside>
